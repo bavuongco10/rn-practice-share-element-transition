@@ -37,10 +37,10 @@ export default class DetailScreen extends Component {
             style={{
               width: maxWidth,
               height: 300,
-              opacity: openProgress.interpolate({
-                inputRange: [0, 0.99, 0.995],
-                outputRange: [0, 0, 1]
-              })
+              // opacity: openProgress.interpolate({
+              //   inputRange: [0, 0.99, 0.995],
+              //   outputRange: [0, 0, 1]
+              // })
             }}
           />
           <Animated.View
@@ -49,14 +49,14 @@ export default class DetailScreen extends Component {
               {
                 opacity: openProgress,
                 backgroundColor: '#fff',
-                transform: [
-                  {
-                    translateY: openProgress.interpolate({
-                      inputRange: [0, 1],
-                      outputRange: [100, 0]
-                    })
-                  }
-                ]
+                // transform: [
+                //   {
+                //     translateY: openProgress.interpolate({
+                //       inputRange: [0, 1],
+                //       outputRange: [100, 0]
+                //     })
+                //   }
+                // ]
               }
             ]}
           >
@@ -116,8 +116,6 @@ const styles = StyleSheet.create({
   closeText: { color: 'white', backgroundColor: 'transparent' },
   closeButton: {
     backgroundColor: 'rgba(0,0,0,0.5)',
-    borderWidth: 1,
-    borderColor: 'white',
     padding: 10,
     paddingTop: 10,
     paddingBottom: 10,

@@ -67,10 +67,10 @@ export default class PhotoGallery extends Component {
 
   open = photo => {
     this._imageOpacitySetters[photo.id](
-      this.state.openProgress.interpolate({
-        inputRange: [0.005, 0.01],
-        outputRange: [1, 0]
-      })
+      // this.state.openProgress.interpolate({
+      //   inputRange: [0.005, 0.01],
+      //   outputRange: [1, 0]
+      // })
     );
     this.setState({ photo, isAnimating: true }, () => {
       Animated.timing(this.state.openProgress, {

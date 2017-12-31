@@ -1,18 +1,26 @@
 import React from 'react';
 import { View, TouchableWithoutFeedback } from 'react-native';
+import { withHandlers } from 'recompose';
+
 import PhotoGallery from './PhotoGallery';
 
-const Item = ({ item, onPhotoOpen }) =>
-  <TouchableWithoutFeedback onPress={() => onPhotoOpen(item)}>
-    <View>
-      <PhotoGallery.Photo
-        photo={item}
-        style={{
-          width: item.width,
-          height: item.height
-        }}
-      />
-    </View>
-  </TouchableWithoutFeedback>;
+const Item = ({ onOpenPhoto, item }) => {
+  return (
+    <TouchableWithoutFeedback onPress={onOpenPhoto}>
+      <View>
+        <PhotoGallery.Photo
+          photo={item}
+          style={{
+            width: item.width,
+            height: item.height
+          }}
+        />
+      </View>
+    </TouchableWithoutFeedback>
+  )
+}
 
-export default Item;
+export default withHandlers({
+  onOpenPhoto: ({ item, onPhotoOpen}) => () => onPhotoOpen(item)
+})(Item);
+

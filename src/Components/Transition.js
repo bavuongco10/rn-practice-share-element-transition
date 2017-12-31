@@ -99,30 +99,30 @@ export default class Transition extends Component {
             height: destRightDimension.height,
             left: destRightDimension.pageX,
             top: destRightDimension.pageY,
-            opacity: openProgress.interpolate({
-              inputRange: [0, 0.005, 0.995, 1],
-              outputRange: [0, 1, 1, 0]
-            }),
-            transform: [
-              {
-                translateX: openProgress.interpolate({
-                  inputRange: [0.01, 0.99],
-                  outputRange: [openingInitTranslateX, 0]
-                })
-              },
-              {
-                translateY: openProgress.interpolate({
-                  inputRange: [0.01, 0.99],
-                  outputRange: [openingInitTranslateY, 0]
-                })
-              },
-              {
-                scale: openProgress.interpolate({
-                  inputRange: [0.01, 0.99],
-                  outputRange: [openingInitScale, 1]
-                })
-              }
-            ]
+            // opacity: openProgress.interpolate({
+            //   inputRange: [0, 0.005, 0.995, 1],
+            //   outputRange: [0, 1, 1, 0]
+            // }),
+            // transform: [
+            //   {
+            //     translateX: openProgress.interpolate({
+            //       inputRange: [0.01, 0.99],
+            //       outputRange: [openingInitTranslateX, 0]
+            //     })
+            //   },
+            //   {
+            //     translateY: openProgress.interpolate({
+            //       inputRange: [0.01, 0.99],
+            //       outputRange: [openingInitTranslateY, 0]
+            //     })
+            //   },
+            //   {
+            //     scale: openProgress.interpolate({
+            //       inputRange: [0.01, 0.99],
+            //       outputRange: [openingInitScale, 1]
+            //     })
+            //   }
+            // ]
           }}
         />
       );
